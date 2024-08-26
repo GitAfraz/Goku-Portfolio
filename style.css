@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(6, 6, 6);
+    color: whitesmoke;
+}
+
+.logo{
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    vertical-align:text-top;
+    margin-right: 30px;
+}
+
+nav{
+    display: flex;
+    margin: 0px 10%;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+li {
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: rgb(0, 115, 255);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+    color: rgb(0, 115, 255);
+}
+
+li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: rgb(0, 115, 255);
+}
+
+.center {
+    width: 120px;
+    height: 30px;
+    position: relative;
+    top: 35%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid rgb(111, 0, 255);
+    outline: none;
+    transition: 1s ease-in-out;
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: rgb(111, 0, 255);
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.btn span {
+    color: white;
+    font-size: 12px;
+    font-weight: 100;
+    position: relative;
+}
+
+section{
+    margin: 50px 20px;
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.Goku{
+    border-radius: 15px;
+}
+
+.left-sec img{
+    margin-left: 20px;
+    height: 65vh;
+    width: auto;
+}
+
+.right-sec {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px 0px 150px;
+    justify-content: center;
+}
+
+.right-sec h4{
+    font-family: "Quicksand", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+.right-sec h1{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 50px;
+    margin: 10px 0px;
+}
+
+.right-sec p{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 10px 0px;
+}
+
+.Ult{
+    margin: 20px 0px;
+    width: 90px;
+}
+.glow-on-hover {
+    margin-top: 20px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    /* background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000); */
+    background: linear-gradient(45deg, #0b2758, #ffffff, #441961, #d7d7d7, #190072, #e9f5ff, #220044, #ffffff, #002a55);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+video {
+    display: none;
+}
